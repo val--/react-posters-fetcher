@@ -3,6 +3,9 @@ import { TextField, makeStyles } from '@material-ui/core';
 
 import Select from '../Select';
 
+const perPageOptions = [10, 20, 30, 40, 50, 100];
+//const perPageOptionsTest = [10, { value: 20, text: 'Vingt' }, 30];
+
 const PostersFilters = ({
     total,
     minPrice,
@@ -57,14 +60,7 @@ const PostersFilters = ({
                 label="perPage"
                 onChange={handlePageSizeChange}
                 value={pageSize}
-                options={[
-                    10,
-                    {
-                        value: 20,
-                        text: 'Vingt',
-                    },
-                    30,
-                ]}
+                options={perPageOptions}
             />
         </div>
     );

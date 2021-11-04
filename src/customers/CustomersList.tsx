@@ -13,10 +13,13 @@ import Select from '../Select';
 import useFetchList from '../useFetchList';
 import { Customer } from '../types';
 
+const perPageOptions = [10, 25, 50];
+
 const CustomersList = () => {
     const classes = useStyles();
     const [listPageState, dispatch] = useReducer(listStateReducer, initialState);
     const { page, pageSize, filter }: ListPageViewState = listPageState;
+    // TODO : use something like https://randomuser.me/ instead ?
     const { data: customers, total } = useFetchList<Customer>({
         entityName: 'customers',
         page,
@@ -73,7 +76,7 @@ const CustomersList = () => {
                     label="PerPage"
                     onChange={handlePageSizeChange}
                     value={pageSize}
-                    options={[10, 25, 50]}
+                    options={perPageOptions}
                 />
             </div>
             <List>

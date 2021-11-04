@@ -39,7 +39,7 @@ const useFetchList = <T extends Entity>({
     const dispatch = useDispatch();
 
     useEffect(() => {
-        const fetchPosters = async () => {
+        const fetchData = async () => {
             dispatch(startLoading());
             setLoading(true);
             const url = `${API_BASE_URL}/${entityName}`;
@@ -66,7 +66,7 @@ const useFetchList = <T extends Entity>({
             setLoading(false);
         };
 
-        fetchPosters();
+        fetchData();
     }, [entityName, page, pageSize, minPrice, maxPrice, filter, dispatch]);
 
     return { data, total, error, loading };

@@ -2,7 +2,7 @@ import React from 'react';
 import {
     FormControl,
     InputLabel,
-    Select as MuiSelect,
+    Select as MultiSelect,
     MenuItem,
     makeStyles,
 } from '@material-ui/core';
@@ -32,7 +32,7 @@ const Select = ({ label, onChange, value, options }: SelectProps) => {
     return (
         <FormControl variant="filled" className={classes.select}>
             <InputLabel>{label}</InputLabel>
-            <MuiSelect onChange={onSelectChange} value={value}>
+            <MultiSelect onChange={onSelectChange} value={value}>
                 {options.map((option) => {
                     let optionValue = null;
                     let text = null;
@@ -49,7 +49,7 @@ const Select = ({ label, onChange, value, options }: SelectProps) => {
                         </MenuItem>
                     );
                 })}
-            </MuiSelect>
+            </MultiSelect>
         </FormControl>
     );
 };
